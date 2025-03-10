@@ -1,0 +1,19 @@
+type SignedUpUser {
+    firstName: String!,
+    lastName: String!,
+    email: String!,
+    roles: [Role],
+    token: String
+}
+
+input SignUpUserInput {
+    email: String!,
+    firstName: String!,
+    lastName: String!,
+    password: String!,
+    confirmPassword: String!,
+}
+
+type Mutation {
+    signup(input: SignUpUserInput!): SignedUpUser!
+}

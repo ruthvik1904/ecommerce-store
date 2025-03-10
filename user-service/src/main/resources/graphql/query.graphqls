@@ -1,0 +1,22 @@
+type User {
+    token: String!,
+    firstName: String!,
+    lastName: String!,
+    email: String!,
+    roles: [Role!]!
+}
+
+enum Role {
+    ADMIN
+    USER
+}
+
+input LoginUserInput {
+    email: String!,
+    password: String!
+}
+
+type Query {
+    login(input: LoginUserInput!): User!,
+}
+
