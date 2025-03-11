@@ -29,8 +29,8 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/graphql").permitAll() // Allow access to /graphql without authentication
-                        .requestMatchers("/graphiql").permitAll() // Allow access to GraphiQL (if you're using it)
+                        .requestMatchers("/api/users").permitAll() // Allow access to /graphql without authentication
+                        .requestMatchers("/api/users/graphiql").permitAll() // Allow access to GraphiQL (if you're using it)
                         .anyRequest().authenticated() // Secure all other endpoints
                 )
                 .formLogin(form -> form.disable()) // Disable the default login page
